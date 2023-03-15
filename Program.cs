@@ -1,7 +1,11 @@
+using IsleworksWebApp.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<CategoryContext>(options => options.UseSqlServer("name=ConnectionStrings:CategoryContext"));
 
 var app = builder.Build();
 
